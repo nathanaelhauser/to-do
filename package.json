@@ -4,7 +4,11 @@
   "description": "To do app with sockets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "start:dev": "concurrently \"cd client && npm run start\" \"cd server && nodemon server.js\"",
+    "start:prod": "cd client && npm run build && cd ../server && nodemon server.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,7 @@
   },
   "homepage": "https://github.com/nathanaelhauser/to-do#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "if-env": "^1.0.4"
   }
 }
