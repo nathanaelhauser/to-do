@@ -6,3 +6,17 @@
   position: relative;
   left: 25vw;
 }
+
+.emptyNoteList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  background-color: #fafafa;
+  color: #aaa;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
